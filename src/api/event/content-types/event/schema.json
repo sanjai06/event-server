@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "eventtitle": {
+      "type": "string",
+      "required": false,
+      "maxLength": 75
+    },
+    "organisername": {
+      "type": "text",
+      "maxLength": 75
+    },
+    "domaintype": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "eventimg": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "mapurl": {
+      "type": "string"
+    },
+    "userid": {
+      "type": "integer"
+    },
+    "month": {
+      "type": "string"
+    },
+    "day": {
+      "type": "integer",
+      "min": 1,
+      "max": 31
+    },
+    "address": {
+      "type": "text"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "locationname": {
+      "type": "string"
+    },
+    "organiserimg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

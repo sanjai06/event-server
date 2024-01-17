@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movies",
+  "info": {
+    "singularName": "movie",
+    "pluralName": "movies",
+    "displayName": "Movie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "movietitle": {
+      "type": "string",
+      "required": true
+    },
+    "moviedesc": {
+      "type": "string"
+    },
+    "movietype": {
+      "type": "string"
+    },
+    "genre": {
+      "type": "string"
+    },
+    "theatre": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "maplink": {
+      "type": "string"
+    },
+    "movieimg": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "about": {
+      "type": "text"
+    },
+    "userid": {
+      "type": "integer"
+    },
+    "organisername": {
+      "type": "string"
+    },
+    "month": {
+      "type": "string"
+    },
+    "day": {
+      "type": "integer"
+    },
+    "year": {
+      "type": "integer"
+    }
+  }
+}

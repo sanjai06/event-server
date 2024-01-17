@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promodetails",
+  "info": {
+    "singularName": "promodetail",
+    "pluralName": "promodetails",
+    "displayName": "Promodetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codename": {
+      "type": "string"
+    },
+    "ticketlimit": {
+      "type": "string"
+    },
+    "discountpercentage": {
+      "type": "string"
+    }
+  }
+}

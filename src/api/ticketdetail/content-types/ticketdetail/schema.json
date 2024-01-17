@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ticketdetails",
+  "info": {
+    "singularName": "ticketdetail",
+    "pluralName": "ticketdetails",
+    "displayName": "Ticketdetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tickettitle": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "eventid": {
+      "type": "integer"
+    },
+    "movieid": {
+      "type": "integer"
+    }
+  }
+}

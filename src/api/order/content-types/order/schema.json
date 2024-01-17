@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cost": {
+      "type": "decimal"
+    },
+    "eventid": {
+      "type": "integer"
+    },
+    "ticketid": {
+      "type": "integer"
+    },
+    "userid": {
+      "type": "integer"
+    },
+    "orderdetails": {
+      "type": "json"
+    }
+  }
+}
