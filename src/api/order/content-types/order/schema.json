@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "cost": {
+    "ticketprice": {
       "type": "decimal"
     },
     "eventid": {
@@ -24,8 +24,26 @@
     "userid": {
       "type": "integer"
     },
-    "orderdetails": {
-      "type": "json"
+    "totalprice": {
+      "type": "decimal"
+    },
+    "ticketquantity": {
+      "type": "integer"
+    },
+    "ticketdetails": {
+      "type": "text"
+    },
+    "organiserid": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "movieid": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
     }
   }
 }

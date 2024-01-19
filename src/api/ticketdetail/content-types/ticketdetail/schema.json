@@ -23,6 +23,9 @@
     },
     "movieid": {
       "type": "integer"
+    },
+    "quantity": {
+      "type": "integer"
     }
   }
 }

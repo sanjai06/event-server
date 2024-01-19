@@ -62,6 +62,24 @@
     },
     "year": {
       "type": "integer"
+    },
+    "seatsio_publickey": {
+      "type": "string"
+    },
+    "seatsio_eventkey": {
+      "type": "string"
+    },
+    "redcircle_price": {
+      "type": "decimal"
+    },
+    "pinkcircle_price": {
+      "type": "decimal"
+    },
+    "orangecircle_price": {
+      "type": "decimal"
+    },
+    "type": {
+      "type": "string"
     }
   }
 }
