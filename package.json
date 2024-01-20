@@ -22,6 +22,7 @@
     "strapi-paypal": "^1.1.0",
     "strapi-plugin-generate-schema": "^0.0.1",
     "strapi-plugin-import-export-entries": "^1.23.1",
+    "strapi-plugin-netlify-deployments": "^2.0.2",
     "styled-components": "5.3.3"
   },
   "author": {

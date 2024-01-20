@@ -8,6 +8,7 @@ import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
 import strapiPaypal from "strapi-paypal/strapi-admin";
 import generateSchema from "strapi-plugin-generate-schema/strapi-admin";
 import importExportEntries from "strapi-plugin-import-export-entries/strapi-admin";
+import netlifyDeployments from "strapi-plugin-netlify-deployments/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
 renderAdmin(document.getElementById("strapi"), {
@@ -18,5 +19,6 @@ renderAdmin(document.getElementById("strapi"), {
     "strapi-paypal": strapiPaypal,
     "generate-schema": generateSchema,
     "import-export-entries": importExportEntries,
+    "netlify-deployments": netlifyDeployments,
   },
 });
