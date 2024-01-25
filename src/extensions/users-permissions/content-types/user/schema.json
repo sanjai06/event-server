@@ -70,10 +70,12 @@
       "type": "integer"
     },
     "likedevent": {
-      "type": "string"
+      "type": "string",
+      "default": "[]"
     },
     "likedmovie": {
-      "type": "string"
+      "type": "string",
+      "default": "[]"
     }
   }
 }
