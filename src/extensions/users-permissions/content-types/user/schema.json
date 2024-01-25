@@ -68,6 +68,12 @@
     },
     "Balance": {
       "type": "integer"
+    },
+    "likedevent": {
+      "type": "string"
+    },
+    "likedmovie": {
+      "type": "string"
     }
   }
 }
