@@ -362,243 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiEventEvent extends Schema.CollectionType {
-  collectionName: 'events';
-  info: {
-    singularName: 'event';
-    pluralName: 'events';
-    displayName: 'Event';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    eventtitle: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 75;
-      }>;
-    organisername: Attribute.Text &
-      Attribute.SetMinMaxLength<{
-        maxLength: 75;
-      }>;
-    domaintype: Attribute.String;
-    category: Attribute.String;
-    description: Attribute.String;
-    eventimg: Attribute.Media;
-    mapurl: Attribute.String;
-    userid: Attribute.Integer;
-    month: Attribute.String;
-    day: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 31;
-      }>;
-    address: Attribute.Text;
-    year: Attribute.Integer;
-    locationname: Attribute.String;
-    organiserimg: Attribute.Media;
-    type: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::event.event',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::event.event',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiFaqFaq extends Schema.CollectionType {
-  collectionName: 'faqs';
-  info: {
-    singularName: 'faq';
-    pluralName: 'faqs';
-    displayName: 'Faq';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    eventid: Attribute.Integer;
-    question: Attribute.String;
-    answer: Attribute.Text;
-    movieid: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiMovieMovie extends Schema.CollectionType {
-  collectionName: 'movies';
-  info: {
-    singularName: 'movie';
-    pluralName: 'movies';
-    displayName: 'Movie';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    movietitle: Attribute.String & Attribute.Required;
-    moviedesc: Attribute.String;
-    movietype: Attribute.String;
-    genre: Attribute.String;
-    theatre: Attribute.String;
-    address: Attribute.String;
-    maplink: Attribute.String;
-    movieimg: Attribute.Media;
-    about: Attribute.Text;
-    userid: Attribute.Integer;
-    organisername: Attribute.String;
-    month: Attribute.String;
-    day: Attribute.Integer;
-    year: Attribute.Integer;
-    seatsio_publickey: Attribute.String;
-    seatsio_eventkey: Attribute.String;
-    redcircle_price: Attribute.Decimal;
-    pinkcircle_price: Attribute.Decimal;
-    orangecircle_price: Attribute.Decimal;
-    type: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::movie.movie',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::movie.movie',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiOrderOrder extends Schema.CollectionType {
-  collectionName: 'orders';
-  info: {
-    singularName: 'order';
-    pluralName: 'orders';
-    displayName: 'Order';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    ticketprice: Attribute.Decimal;
-    eventid: Attribute.Integer;
-    ticketid: Attribute.Integer;
-    userid: Attribute.Integer;
-    totalprice: Attribute.Decimal;
-    ticketquantity: Attribute.Integer;
-    ticketdetails: Attribute.Text;
-    organiserid: Attribute.Integer;
-    name: Attribute.String;
-    movieid: Attribute.String;
-    type: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::order.order',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::order.order',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPromodetailPromodetail extends Schema.CollectionType {
-  collectionName: 'promodetails';
-  info: {
-    singularName: 'promodetail';
-    pluralName: 'promodetails';
-    displayName: 'Promodetail';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    codename: Attribute.String;
-    ticketlimit: Attribute.String;
-    discountpercentage: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::promodetail.promodetail',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::promodetail.promodetail',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTicketdetailTicketdetail extends Schema.CollectionType {
-  collectionName: 'ticketdetails';
-  info: {
-    singularName: 'ticketdetail';
-    pluralName: 'ticketdetails';
-    displayName: 'Ticketdetail';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    tickettitle: Attribute.String;
-    price: Attribute.Decimal;
-    eventid: Attribute.Integer;
-    movieid: Attribute.Integer;
-    quantity: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::ticketdetail.ticketdetail',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::ticketdetail.ticketdetail',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -1188,6 +951,309 @@ export interface PluginGenerateSchemaSchema extends Schema.CollectionType {
   };
 }
 
+export interface ApiBannerBanner extends Schema.CollectionType {
+  collectionName: 'banners';
+  info: {
+    singularName: 'banner';
+    pluralName: 'banners';
+    displayName: 'Banner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    bannerimg: Attribute.Media;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    eventtitle: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 75;
+      }>;
+    organisername: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 75;
+      }>;
+    domaintype: Attribute.String;
+    category: Attribute.String;
+    description: Attribute.String;
+    eventimg: Attribute.Media;
+    mapurl: Attribute.String;
+    userid: Attribute.Integer;
+    month: Attribute.String;
+    day: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 31;
+      }>;
+    address: Attribute.Text;
+    year: Attribute.Integer;
+    locationname: Attribute.String;
+    organiserimg: Attribute.Media;
+    type: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'Faq';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    eventid: Attribute.Integer;
+    question: Attribute.String;
+    answer: Attribute.Text;
+    movieid: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMovieMovie extends Schema.CollectionType {
+  collectionName: 'movies';
+  info: {
+    singularName: 'movie';
+    pluralName: 'movies';
+    displayName: 'Movie';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    movietitle: Attribute.String & Attribute.Required;
+    moviedesc: Attribute.String;
+    movietype: Attribute.String;
+    genre: Attribute.String;
+    theatre: Attribute.String;
+    address: Attribute.String;
+    maplink: Attribute.String;
+    movieimg: Attribute.Media;
+    about: Attribute.Text;
+    userid: Attribute.Integer;
+    organisername: Attribute.String;
+    month: Attribute.String;
+    day: Attribute.Integer;
+    year: Attribute.Integer;
+    seatsio_publickey: Attribute.String;
+    seatsio_eventkey: Attribute.String;
+    redcircle_price: Attribute.Decimal;
+    pinkcircle_price: Attribute.Decimal;
+    orangecircle_price: Attribute.Decimal;
+    type: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::movie.movie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::movie.movie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOrderOrder extends Schema.CollectionType {
+  collectionName: 'orders';
+  info: {
+    singularName: 'order';
+    pluralName: 'orders';
+    displayName: 'Order';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ticketprice: Attribute.Decimal;
+    eventid: Attribute.Integer;
+    ticketid: Attribute.Integer;
+    userid: Attribute.Integer;
+    totalprice: Attribute.Decimal;
+    ticketquantity: Attribute.Integer;
+    ticketdetails: Attribute.Text;
+    organiserid: Attribute.Integer;
+    name: Attribute.String;
+    movieid: Attribute.String;
+    type: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPromodetailPromodetail extends Schema.CollectionType {
+  collectionName: 'promodetails';
+  info: {
+    singularName: 'promodetail';
+    pluralName: 'promodetails';
+    displayName: 'Promodetail';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    codename: Attribute.String;
+    ticketlimit: Attribute.String;
+    discountpercentage: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::promodetail.promodetail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::promodetail.promodetail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiReviewReview extends Schema.CollectionType {
+  collectionName: 'reviews';
+  info: {
+    singularName: 'review';
+    pluralName: 'reviews';
+    displayName: 'Review';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    message: Attribute.Text;
+    rating: Attribute.Integer;
+    eventid: Attribute.Integer;
+    movieid: Attribute.Integer;
+    username: Attribute.String;
+    userid: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::review.review',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::review.review',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTicketdetailTicketdetail extends Schema.CollectionType {
+  collectionName: 'ticketdetails';
+  info: {
+    singularName: 'ticketdetail';
+    pluralName: 'ticketdetails';
+    displayName: 'Ticketdetail';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    tickettitle: Attribute.String;
+    price: Attribute.Decimal;
+    eventid: Attribute.Integer;
+    movieid: Attribute.Integer;
+    quantity: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ticketdetail.ticketdetail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ticketdetail.ticketdetail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1198,12 +1264,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::event.event': ApiEventEvent;
-      'api::faq.faq': ApiFaqFaq;
-      'api::movie.movie': ApiMovieMovie;
-      'api::order.order': ApiOrderOrder;
-      'api::promodetail.promodetail': ApiPromodetailPromodetail;
-      'api::ticketdetail.ticketdetail': ApiTicketdetailTicketdetail;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -1215,6 +1275,14 @@ declare module '@strapi/types' {
       'plugin::strapi-paypal.paypal-product': PluginStrapiPaypalPaypalProduct;
       'plugin::strapi-paypal.paypal-payment': PluginStrapiPaypalPaypalPayment;
       'plugin::generate-schema.schema': PluginGenerateSchemaSchema;
+      'api::banner.banner': ApiBannerBanner;
+      'api::event.event': ApiEventEvent;
+      'api::faq.faq': ApiFaqFaq;
+      'api::movie.movie': ApiMovieMovie;
+      'api::order.order': ApiOrderOrder;
+      'api::promodetail.promodetail': ApiPromodetailPromodetail;
+      'api::review.review': ApiReviewReview;
+      'api::ticketdetail.ticketdetail': ApiTicketdetailTicketdetail;
     }
   }
 }
