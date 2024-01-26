@@ -1005,7 +1005,6 @@ export interface ApiEventEvent extends Schema.CollectionType {
     domaintype: Attribute.String;
     category: Attribute.String;
     description: Attribute.String;
-    eventimg: Attribute.Media;
     mapurl: Attribute.String;
     userid: Attribute.Integer;
     month: Attribute.String;
@@ -1017,8 +1016,9 @@ export interface ApiEventEvent extends Schema.CollectionType {
     address: Attribute.Text;
     year: Attribute.Integer;
     locationname: Attribute.String;
-    organiserimg: Attribute.Media;
     type: Attribute.String;
+    eventimg: Attribute.String;
+    organiserimg: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1080,7 +1080,6 @@ export interface ApiMovieMovie extends Schema.CollectionType {
     theatre: Attribute.String;
     address: Attribute.String;
     maplink: Attribute.String;
-    movieimg: Attribute.Media;
     about: Attribute.Text;
     userid: Attribute.Integer;
     organisername: Attribute.String;
@@ -1093,6 +1092,8 @@ export interface ApiMovieMovie extends Schema.CollectionType {
     pinkcircle_price: Attribute.Decimal;
     orangecircle_price: Attribute.Decimal;
     type: Attribute.String;
+    movieimg: Attribute.String;
+    organiserimg: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

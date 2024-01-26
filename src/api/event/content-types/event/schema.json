@@ -30,17 +30,6 @@
     "description": {
       "type": "string"
     },
-    "eventimg": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "mapurl": {
       "type": "string"
     },
@@ -64,18 +53,13 @@
     "locationname": {
       "type": "string"
     },
-    "organiserimg": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "type": {
+      "type": "string"
+    },
+    "eventimg": {
+      "type": "string"
+    },
+    "organiserimg": {
       "type": "string"
     }
   }

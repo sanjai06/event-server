@@ -34,17 +34,6 @@
     "maplink": {
       "type": "string"
     },
-    "movieimg": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "about": {
       "type": "text"
     },
@@ -79,6 +68,12 @@
       "type": "decimal"
     },
     "type": {
+      "type": "string"
+    },
+    "movieimg": {
+      "type": "string"
+    },
+    "organiserimg": {
       "type": "string"
     }
   }
