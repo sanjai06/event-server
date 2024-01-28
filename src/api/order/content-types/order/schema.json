@@ -39,11 +39,11 @@
     "name": {
       "type": "string"
     },
-    "movieid": {
-      "type": "string"
-    },
     "type": {
       "type": "string"
+    },
+    "movieid": {
+      "type": "integer"
     }
   }
 }

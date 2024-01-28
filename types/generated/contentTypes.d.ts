@@ -965,6 +965,7 @@ export interface ApiBannerBanner extends Schema.CollectionType {
   attributes: {
     bannerimg: Attribute.Media;
     link: Attribute.String;
+    imgurl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -975,6 +976,39 @@ export interface ApiBannerBanner extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCouponCoupon extends Schema.CollectionType {
+  collectionName: 'coupons';
+  info: {
+    singularName: 'coupon';
+    pluralName: 'coupons';
+    displayName: 'Coupon';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    eventid: Attribute.Integer;
+    movieid: Attribute.Integer;
+    code: Attribute.String & Attribute.Unique;
+    discount: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::coupon.coupon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::coupon.coupon',
       'oneToOne',
       'admin::user'
     > &
@@ -1133,8 +1167,8 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     ticketdetails: Attribute.Text;
     organiserid: Attribute.Integer;
     name: Attribute.String;
-    movieid: Attribute.String;
     type: Attribute.String;
+    movieid: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1277,6 +1311,7 @@ declare module '@strapi/types' {
       'plugin::strapi-paypal.paypal-payment': PluginStrapiPaypalPaypalPayment;
       'plugin::generate-schema.schema': PluginGenerateSchemaSchema;
       'api::banner.banner': ApiBannerBanner;
+      'api::coupon.coupon': ApiCouponCoupon;
       'api::event.event': ApiEventEvent;
       'api::faq.faq': ApiFaqFaq;
       'api::movie.movie': ApiMovieMovie;

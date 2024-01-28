@@ -25,6 +25,9 @@
     },
     "link": {
       "type": "string"
+    },
+    "imgurl": {
+      "type": "string"
     }
   }
 }
