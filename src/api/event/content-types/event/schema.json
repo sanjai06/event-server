@@ -61,6 +61,24 @@
     },
     "organiserimg": {
       "type": "string"
+    },
+    "ticketingtype": {
+      "type": "string"
+    },
+    "seatsiopublickey": {
+      "type": "string"
+    },
+    "seatsioeventkey": {
+      "type": "string"
+    },
+    "redprice": {
+      "type": "integer"
+    },
+    "orangeprice": {
+      "type": "integer"
+    },
+    "pinkprice": {
+      "type": "integer"
     }
   }
 }

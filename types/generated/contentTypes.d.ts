@@ -1053,6 +1053,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
     type: Attribute.String;
     eventimg: Attribute.String;
     organiserimg: Attribute.String;
+    ticketingtype: Attribute.String;
+    seatsiopublickey: Attribute.String;
+    seatsioeventkey: Attribute.String;
+    redprice: Attribute.Integer;
+    orangeprice: Attribute.Integer;
+    pinkprice: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
